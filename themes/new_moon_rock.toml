@@ -1,0 +1,9 @@
+inherits = "new_moon"
+
+# This was added after most themes were created.
+"ui.virtual.jump-label" = { fg = "red-dim", bg = "black" }
+
+[palette]
+darkest = "#1d1d1d" # With the original, rulers matched the background so were invisible.
+red = "#f2a7aa" # was too dark
+red-dim = "#ff3333" # for jump labels

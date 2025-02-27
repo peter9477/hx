@@ -1,26 +1,65 @@
-
-# theme = "adwaita_dark"
 theme = "new_moon_rock"
 
 [editor]
-auto-save = true
-auto-format = true
+#auto-completion = true
+#line-number = "relative"
 auto-completion = true
+auto-format = true
 bufferline = "always"
 color-modes = true
 completion-replace = true
 cursorcolumn = false
 cursorline = false
-#line-number = "relative"
+default-line-ending = "lf"
+end-of-line-diagnostics = "hint"
 mouse = true
-rulers = [79]
+popup-border = "all"
+rulers = [79, 99]
 true-color = true
 
-[editor.whitespace.render]
-space = "none"
-nbsp = "none"
-tab = "none"
-newline = "none"
+[editor.auto-save]
+focus-lost = true
+
+[editor.cursor-shape]
+insert = "block"
+
+[editor.file-picker]
+hidden = false
+ignore = false
+git-ignore = true
+git-global = false
+
+[editor.gutters]
+line-numbers.min-width = 2
+
+[editor.indent-guides]
+render = true
+character = "╎" # Some characters that work well: "▏", "┆", "┊", "⸽"
+skip-levels = 0
+
+[editor.inline-diagnostics]
+cursor-line = "warning" # show warnings and errors on the cursorline inline
+
+[editor.lsp]
+display-inlay-hints = true
+display-messages = true
+display-progress-messages = true
+goto-reference-include-declaration = false
+
+[editor.soft-wrap]
+enable = true
+max-wrap = 25 # increase value to reduce forced mid-word wrapping
+max-indent-retain = 40
+#wrap-indicator = ""  # set wrap-indicator to "" to hide it
+
+[editor.statusline]
+left = ["mode","spinner","file-name","read-only-indicator",
+  "file-modification-indicator","separator","version-control"]
+right = ["diagnostics", "separator", "selections", "register", "position", "file-encoding"]
+separator = "╎"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
 
 [editor.whitespace.characters]
 space = "·"
@@ -29,39 +68,16 @@ tab = "→"
 newline = "⏎"
 tabpad = "·" # Tabs will look like "→···" (depending on tab width)
 
-[editor.file-picker]
-hidden = false
-git-ignore = true
-git-global = false
-
-[editor.statusline]
-# left = []
-# right = [
-#    "file-type"
-# ]
-separator = "╎"
-mode.normal = "NORMAL"
-mode.insert = "INSERT"
-mode.select = "SELECT"
-
-[editor.lsp]
-display-messages = true
-display-inlay-hints = true
-
-[editor.cursor-shape]
-insert = "bar"
-
-[editor.indent-guides]
-render = true
-character = "╎" # Some characters that work well: "▏", "┆", "┊", "╎"
-skip-levels = 0
-
-[editor.soft-wrap]
-enable = true
-max-wrap = 10 # increase value to reduce forced mid-word wrapping
-max-indent-retain = 40
+[editor.whitespace.render]
+space = "none"
+nbsp = "none"
+tab = "none"
+newline = "none"
 
 [keys.normal]
+#C-s = ":w" # Maps Ctrl-s to the typable command :w which is an alias for :write (save file)
+#C-o = ":open ~/.config/helix/config.toml"
+#C-l = ":open ~/.config/helix/languages.toml"
 # esc is remapped to capslock locally
 # esc = ["collapse_selection", "keep_primary_selection", ":w"]
 # C-v = "vsplit"
@@ -86,6 +102,9 @@ max-indent-retain = 40
 #   "paste_before"
 # ]
 
+#[keys.normal.":"]
+#x = "write-buffer-close"
+ 
 [keys.normal.g]
 q = ":bc"
 # Q = ":bc!"

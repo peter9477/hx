@@ -16,6 +16,7 @@ formatter = { command = "prettier", args = ["--parser", "json"] }
 [[language]]
 name = "javascript"
 auto-format = true
+indent = { tab-width = 4, unit = "    " }
 
 [[language]]
 name = "python"
@@ -25,7 +26,7 @@ auto-format = true
 autopep8.enabled = false
 black.enabled = false
 # flake8 does the E501 long line length crap
-flake8 = { enabled = true, maxLineLength = 100 }
+flake8 = { enabled = false, maxLineLength = 100 }
 mccabe.enabled = false
 pycodestyle.enabled = false
 pyflakes.enabled = false

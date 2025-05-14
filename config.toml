@@ -4,7 +4,7 @@ theme = "new_moon_rock"
 #auto-completion = true
 #line-number = "relative"
 auto-completion = true
-auto-format = true
+auto-format = false
 bufferline = "always"
 color-modes = true
 completion-replace = true
@@ -41,7 +41,7 @@ skip-levels = 0
 cursor-line = "warning" # show warnings and errors on the cursorline inline
 
 [editor.lsp]
-display-inlay-hints = true
+display-inlay-hints = false
 display-messages = true
 display-progress-messages = true
 goto-reference-include-declaration = false
@@ -75,6 +75,7 @@ tab = "none"
 newline = "none"
 
 [keys.normal]
+A-h = ":toggle lsp.display-inlay-hints"
 #C-s = ":w" # Maps Ctrl-s to the typable command :w which is an alias for :write (save file)
 #C-o = ":open ~/.config/helix/config.toml"
 #C-l = ":open ~/.config/helix/languages.toml"
@@ -111,7 +112,8 @@ q = ":bc"
 
 # Remove vscode "training wheels"
 # Comment this to enable arrow navigation in insert mode
-# [keys.insert]
+[keys.insert]
+A-h = ":toggle lsp.display-inlay-hints"
 # j = { j = "normal_mode" }
 # "C-space" = "completion"
 # A-b = ["move_prev_word_start", "collapse_selection"]
@@ -131,3 +133,4 @@ q = ":bc"
 # o = ":config-open"
 # l = ":o ~/.config/helix/languages.toml"
 # C-g = [":new", ":insert-output lazygit", ":buffer-close", ":redraw"]
+
